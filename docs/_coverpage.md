@@ -1,8 +1,8 @@
 # 计算机网络 学习笔记
 
-> 此文档为 Computer Networks 的学习笔记
+> sleepykiki 的 Computer Networks 的学习笔记
 
-- 初学者，理解难免有错误，见谅
+- Dive into Internet !
 
 [GitHub](https://github.com/SleepyKIKI)
 
