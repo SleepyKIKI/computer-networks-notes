@@ -1,8 +1,8 @@
 # 计算机网络 学习笔记
 
-> sleepykiki 的 Computer Networks 的学习笔记
+> Dive into Internet !
 
-- Dive into Internet !
+- sleepykiki's "Computer Networks" notes
 
 [GitHub](https://github.com/SleepyKIKI)
 
