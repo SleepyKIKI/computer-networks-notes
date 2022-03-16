@@ -1,9 +1,10 @@
+![](_media/favicon.ico)
+
 # 计算机网络 学习笔记
 
 > Dive into Internet !
 
-- sleepykiki's "Computer Networks" notes
+- sleepykiki's 'Computer Networks' notes
 
-[GitHub](https://github.com/SleepyKIKI)
+[GitHub](https://github.com/SleepyKIKI) [Getting Started](README.md)
 
-[Get Started](README.md)
