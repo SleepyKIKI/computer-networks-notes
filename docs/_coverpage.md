@@ -6,4 +6,4 @@
 
 [GitHub](https://github.com/SleepyKIKI)
 
-[Get Started](#docsify)
+[Get Started](README.md)
