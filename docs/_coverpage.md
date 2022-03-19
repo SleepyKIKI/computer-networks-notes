@@ -1,8 +1,8 @@
-![](_media/favicon.ico)
+
 
 # 计算机网络 学习笔记
 
-> Dive into Internet !
+> Dive into Networks !
 
 - sleepykiki's 'Computer Networks' notes
 
