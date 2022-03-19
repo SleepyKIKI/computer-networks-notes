@@ -2,9 +2,15 @@
 
 AMPS: Advanced Mobile Phone System (p65)
 
+APs : Access Points (p70)
+
+ad hoc network (p70)
+
 # C
 
 CDMA: Code Division Multiple Access (p66)
+
+CSMA : Carrier Sense Multiple Access (p72)
 
 # G
 
@@ -27,6 +33,12 @@ LTE : Long Term Evolution (p69)
 MSC: Mobile Switching Center (p68)
 
 MGW: Media Gateway (p68)
+
+multipath fading (p70)
+
+# O
+
+OFDM : Orthogonal Frequency Division Multiplexing (p72)
 
 # P
 
@@ -53,3 +65,7 @@ UMTS: Universal Mobile Telecommunications System (p65)
 WCDMA: Wideband Code Division Multiple Access (p65) 
 
 WiMAX (p69)
+
+WEP : Wired Equivalent Privacy (p73)
+
+WPA : WiFi Protected Access (p73)
