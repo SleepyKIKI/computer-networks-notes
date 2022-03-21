@@ -2,4 +2,6 @@
 - 1-Introduction
   - [相关名词](/chap01/terms_in_chap1.md)
   - [1-5 Example Networks](/chap01/sec05.md)
-- 
+- [2-The Physical Layer](/chap02/outline.md) 
+  - [相关名词](/chap02/terms_in_chap2.md)
+  - [2-1 The Theoretical Basis for data communication](/chap02/sec01.md)
