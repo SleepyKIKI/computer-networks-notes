@@ -34,11 +34,12 @@ $c = \frac{2}{T}{\int_{0}^{T}} g(t) dt $
 
 - 对于无噪音的理论传输，采用奈奎斯特定理：
 
-  maximum data rate = $2 B \log_2 V$ bits/sec
+  maximum data rate $R = 2 B \log_2 V$ bits/sec
 
 - 对于一般有噪音的情况，采用香农定理估计：
 
-  maximum number of bits/sec = $B \log_2 (1+S/N)$
+  maximum number of bits/sec $R = B \log_2 (1+S/N)$
 
-
-
+> 其中 ：
+>
+> $R$ 为传输速度，$B$ 为带宽，$V$ 为信号的离散等级，$S$ 为信号的能量，$N$ 为噪音的能量
