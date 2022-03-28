@@ -10,7 +10,7 @@
   - TDM
   - CDM
 
-## 2.5.1 Baseband Transmission 
+## 2.5.1 基带传输(Baseband Transmission)
 
 一些编码方法：
 
@@ -70,4 +70,53 @@ bit rate : 数据传输率，等于 信号变化率 乘以 信号携带的信息
   - 对于不能平衡的，映射到两个互补的值上。如“000”映射到“1011”和“0100”上，编码器会记录不平衡性，以便下次编码时补偿。
   - 这种方式有效控制了不平衡性，至多偏移2bit
   - 同时也不会有超过5个连续的“1”和“0”，有助于**时钟恢复** 
-  - 牺牲了一定的带宽效率
+  - 牺牲了一定的带宽效率（20%）
+
+## 2.5.2 通带传输(Passband Transmission)
+
+**概要：**
+
+- 前述的信号传输能力只和带宽相关
+- 信号传输不可能都在低频下进行
+- 因此在传输时将频带移到高频，接受时再将其还原
+- 在进行通带传输的同时，通常伴随着数字调制(Digital modulation )
+
+**数字调制：**ASK、FSK、PSK
+
+- 通常会将不同调制方式结合起来
+
+- FSK 和 PSK 只能存在其中一种（因为频率和相位是相关的）
+- **constellation diagram** 
+  - 为了尽量减小噪音扰动造成的误差，采用格雷码（Gray code）。格雷码相关资料具体可以参考[这篇文章](https://zhuanlan.zhihu.com/p/29254973)
+
+![digital_modulation](sec05/digital_modulation.png)
+
+## 2.5.3 Frequency Division Multiplexing
+
+将一个频带分为多个频带，每个信道使用其中一个频带。最普通的 FDM 每个频带之间设有一个隔离频带(Guard band)，以防止信道之间相互干扰。
+
+![FDM](sec05/FDM.png)
+
+对于`OFDM`，信道之间没有隔离频带，其采用了特殊的频域分布，使信号在其他信号的中心位置的干扰为0。因此只需采样中心位置频率的值即可。
+
+![OFDM](sec05/OFDM.png)
+
+可以参考：https://www.tutorialspoint.com/frequency-division-multiplexing
+
+## 2.5.4 Time Division Multiplexing
+
+将一段时间分成几段，分别分给几个信号进行传输。
+
+![TDM](sec05/TDM.png)
+
+STDM是根据流量统计进行分配的一种方式。
+
+## 2.5.5 Code Division Multiplexing
+
+一个有趣的类比：
+
+- FDM：不同的人以不同的音调说话
+- TDM：大家在一个屋子里轮流发言
+- CDM：不同的人说不同的语言
+
+具体可以看书，也可参考：https://www.tutorialspoint.com/code-division-multiplexing

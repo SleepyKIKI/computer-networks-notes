@@ -4,9 +4,19 @@ ADSL : Asymmetric Digital Subscriber Line (p94)
 
 AMI : Alternate Mark Inversion (p129)
 
+ASK : Amplitude Shift Keying (p130)
+
+# B
+
+BPSK : Binary Phase Shift Keying (p130)
+
 # C
 
 Cat 5 : Category 5 (p97)
+
+# F
+
+FSK : Frequency Shift Keying (p130)
 
 # G
 
@@ -23,6 +33,14 @@ IrDA : Infrared Data Association (p114)
 NRZ : Non-Return-to-Zero (p125)
 
 NRZI : Non-Return-to-Zero Invert (p127)
+
+# P
+
+PSK : Phase Shift Keying (p130)
+
+# Q
+
+QPSK : Quadrature Phase Shift Keying (p131)
 
 # S
 
