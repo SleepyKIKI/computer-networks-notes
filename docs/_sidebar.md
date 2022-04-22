@@ -6,3 +6,7 @@
   - [相关名词](/chap02/terms_in_chap2.md)
   - [2-1 The Theoretical Basis for data communication](/chap02/sec01.md)
   - [2-5 Digital Modulation and Multiplexing ](/chap02/sec05.md)
+- [3-The Data Link Layer](chap03/outline.md)
+  - [3-1 Data Link Layer Design Issue](chap03/sec01.md)
+- [4-The Medium Access Control Sublayer](chap04/outline.md)
+  - [4-1 The Channel Allocation Problem](chap04/sec01.md)
