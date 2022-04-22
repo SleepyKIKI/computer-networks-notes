@@ -1,6 +1,6 @@
-# The Medium Access Control Sublayer
+## The Medium Access Control Sublayer
 
-## 本章的主要结构
+### 本章的主要结构
 
 >主要内容：
 >
@@ -12,6 +12,6 @@
 - 信道的分配问题
 - 局域网相关内容
 
-## 目录
+### 目录
 
-[4-1 The Channel Allocation Problem](sec01.md)
+#### [4-1 The Channel Allocation Problem](/chap04/sec01.md)
