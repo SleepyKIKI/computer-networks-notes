@@ -52,6 +52,7 @@
       - 一段时间包含 0 帧 ：闲置时间段 (idle slot)
       - 一段时间包含 1 帧 ：成功发送帧 (successful transmission)
       - 一段时间包含 2 帧及以上：帧冲突 (collision)
+      - 对应的缺点：每个站点的时间需要同步
 - 载波侦听 (Carrier Sense) 或者 载波不听 (No Carrier Sense)
   - 内容：
     - 载波侦听：假设站点在发送帧前，能检测到当前信道是否被占用。如果被占用，那么站点就不会发送帧
