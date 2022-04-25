@@ -41,3 +41,25 @@ $$
 
 ### Slotted ALOHA
 
+Slotted ALOHA采用了分槽的时间，当站点有发送需求时，必须等到下一个时间槽开始的时刻才能发送。因此相对于 Pure ALOHA ，Slotted ALOHA的 Vulnerable Time 缩短为 t (为Pure ALOHA的一半)
+
+因此成功发送帧的数量的期望值：$S = G P_0 = G e^{-G}$
+
+对于给定的一帧，其发送成功概率为：$P_0 =Pr[0] = e^{-G}$
+
+与之相对应的，冲突的概率为：$P_{collision}=1-P_0 =1-e^{-G}$
+
+则发送次数为$k$的概率为：$P_k = e^{-G}(1-e^{-G})^{k-1}$
+
+可以算得其发送次数的期望值为$E$：
+$$
+E=\Sigma^{\infin}_{k=1}kP_k = \Sigma^{\infin}_{k=1}k e^{-G}(1-e^{-G})^{k-1} = e^{G}
+$$
+因此，虽然 $G$ 增大时，空闲的概率会下降，但冲突的概率会指数级上升，发送次数会指数级增大。
+
+下图展示了成功发送帧数与信道负载的关系：
+
+![throughput_versus_offered_traffic](sec02/throughput_versus_offered_traffic_ALOHA.png)
+
+## 4.2.2 Carrier Sense Multiple Access Protocols
+
