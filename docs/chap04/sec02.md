@@ -136,3 +136,29 @@ CSMA/CD 虽然可以在检测到冲突时停止发送，但在Contention Peroiod
 
 ### A Bit-Map Protocol
 
+两个阶段：
+
+- Contention period
+
+  若有 N 个站点，则在 Contention period 期间，时间槽被分成 N 份，若在此前第 j 个站点准备发出数据，则 Contention period 期间的第 j 个时间槽内填入1。
+
+- Transmission period
+
+  在该阶段，按照 Contention period 期间被填入 1 的时间槽的序号顺序，发送对应序号站点的数据。这样就不会发生冲突。
+
+如下为两个阶段的流程图：（前8个slot为 Contention period ，后面的 Frames 为对应的 Transmission period ）
+
+![bit-map protocol](sec02/bit-map_protocol.png)
+
+工作情况分析：
+
+- 低载：（假设一次只有一个站点需要发出数据）
+  - 从站点的视角：假设一个站点准备好发送数据时，扫描进度平均在 Contention period 中点位置
+    - 低序号站点：这轮扫描完成( $N/2$ slots) + 下轮整个扫描完成后($N$ slots) 才能将数据发出，因此开销为 $1.5 N $ slots
+    - 高序号站点：这轮扫描完成( $N/2$ slots) 即可将数据发出
+    - 因此平均下来的开销为 $N$ slots
+  - 从信道的视角：效率为 $\frac{d}{d+N}$ ($d$ 为数据量，$N$ 为额外开销量)
+  - 平均延迟为：$N + d$
+- 高载：（假设一次每个站点都需要发出数据，且数据量平均为 $d$）
+  - 从信道的视角：额外开销量 $N$ 被每个站点发出的数据量均分 ，因此效率为 $\frac{d}{d+1}$ 
+  - 平均延迟为：$N+(N-1)d$
