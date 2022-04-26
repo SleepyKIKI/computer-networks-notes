@@ -114,3 +114,25 @@ $$
 
 ![throughput_versus_offered_traffic](sec02/throughput_versus_offered_traffic_p_CSMA.png)
 
+### CSMA with Collision Detection
+
+Persistent CSMA 和 Nonpersistent CSMA 可以检测出信道是否正忙，减少了冲突发生的可能，但仍然有可能发生冲突。为了尽量减少冲突发生带来的影响（浪费带宽和时间），我们需要有冲突检测的机制。通常被写为 **CSMA/CD**
+
+这种机制的基本原理就是：站点侦听信道上的信号，若与发出的信号相同，则说明没有冲突；否则则发生了冲突。当站点知道发生冲突后，会立即停止信号继续发送，以免浪费时间和带宽。
+
+CSMA/CD有三种状态：
+
+- Transmission period
+- Contention period
+- Idle period
+
+检测到冲突的最长时间极限为：$2\tau$（其中 $\tau$ 为信号在两个最远的站点之间的传输延迟）
+
+因此 CSMA/CD 可以被视为是时间槽段时间为 $2 \tau $ 的 **Slotted ALOHA**
+
+## 4.2.3 Collision-Free Protocols
+
+CSMA/CD 虽然可以在检测到冲突时停止发送，但在Contention Peroiod期间仍会发送冲突。尤其是当 bandwidth-delay product 很大时，这种影响会很明显。下面介绍的协议即便是在Contention Peroiod期间也不会发生冲突。
+
+### A Bit-Map Protocol
+
