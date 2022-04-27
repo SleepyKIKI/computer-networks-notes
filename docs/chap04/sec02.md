@@ -162,3 +162,31 @@ CSMA/CD 虽然可以在检测到冲突时停止发送，但在Contention Peroiod
 - 高载：（假设一次每个站点都需要发出数据，且数据量平均为 $d$）
   - 从信道的视角：额外开销量 $N$ 被每个站点发出的数据量均分 ，因此效率为 $\frac{d}{d+1}$ 
   - 平均延迟为：$N+(N-1)d$
+
+### Token Passing
+
+Token 会轮流在每个站点之间传递，当Token传递到一个站点时，该站点被允许发送帧，在帧发送完成之后，该站点将 Token 传递到下一个站点。
+
+额外的开销为：N 次传递 Token 的传播时间
+
+相比于 Bit-Map Protocol 的优势：
+
+- 由于 Token 是轮流传递的，因此对于每个站点，其额外等待的时间都是相当的，不会出现 Bit-Map Protocol 中低序号与高序号之间的等待时间不同的情况
+- 协议发送数据前并不需要 Token 传递完一圈，只需要 Token 传递到下一个站点
+
+![token ring](sec02/token_ring.png)
+
+### Binary Countdown
+
+对于上面提到的 Bit-Map 和 Token Passing 每个站的开销都为 1 ，总的开销为 N 。如果使用二进制编码来表示每个站的地址，会进一步减小开销，此时开销仅为 $\log_2 N$。
+
+地址高的站点可以优先发送帧
+
+![binary countdown](sec02/binary_countdown.png)
+
+这种方法的效率为：$\frac{d}{d+\log_2 {N}}$
+
+但如果帧被精心设计，使得二进制地址是帧的第一个字段，那么可以做到效率为100%
+
+## 4.2.4 Limited-Contention Protocols
+
