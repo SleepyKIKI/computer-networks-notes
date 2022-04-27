@@ -1,5 +1,15 @@
 # Multiple Access Protocols
 
+总结：
+
+- 竞争机制 (contention protocol) ：ALOHA、(1、non、p) persistent CSMA、CSMA/CD
+  - 优势：延迟小
+  - 劣势：高载时，开销增大
+- 预约机制 (reservation protocol)：bit-map、token-pass
+  - 优势：开销固定，高载时效率高
+  - 劣势：低载时，延迟大，且开销固定
+- 
+
 ## 4.2.1 ALOHA
 
 类型:
@@ -190,3 +200,18 @@ Token 会轮流在每个站点之间传递，当Token传递到一个站点时，
 
 ## 4.2.4 Limited-Contention Protocols
 
+前面介绍的基于竞争和预约的机制在低载和高载时各有优劣，如果能将其结合起来，可以达到更好的效果，因此设计出了 **limited-Contention Protocols**。在低载时采用竞争机制，提供更小的延迟；在高载时采用无冲突的机制，以提供更高的使用效率。
+
+对于对称的竞争情况 (即每个站点可以发送帧的机会相等，为 $p$ )，若此时想要发送数据的站点数量为 $k$， 可以得到每次成功发送（不会发生冲突的概率）为：$k p (1-p)^{k-1}$。
+
+我们可以考察最优情况，即 $p$ 的取值恰好让该概率最大，此时 $p=1/k$，得到的概率为：$Pr[optimal \ p ] = [\frac{k-1}{k}]^{k-1}$
+
+随着计划发送数据的站点数量 $k$ 的增加，发送成功的可能性会渐进至 $1/e$，且下降速度很快，因此我们需要尽量少的站点数量以获得更大的成功概率。下图展示了发送成功概率与计划发送数据的站点数量 $k$ 的关系：
+
+![probability_vs_num_of_ready_stations](sec02/probability_vs_num_of_ready_stations.png)
+
+因此我们的目标是将合理分组，将站点分到不同的组，规定一个组只能在特定的时间点进行竞争，减少每个时间槽或时间点的竞争站点的数量，以获取更高的发送成功率。
+
+与此同时，我们希望能够动态分组。在低载时，每个组可以有许多的站点；但在高载时，每个组包含较少的站点，甚至是只包含一个站点。
+
+### The Adaptive Tree Walk Protocol
