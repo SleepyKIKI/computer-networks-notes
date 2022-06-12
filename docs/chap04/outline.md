@@ -14,7 +14,9 @@
 
 ### 目录
 
-#### [4-1 The Channel Allocation Problem](/chap04/sec01.md)
+#### [4-1 The Channel Allocation Problem](sec01.md)
 
-#### [4-2 Multiple Access Protocols](/chap04/sec02.md)
+#### [4-2 Multiple Access Protocols](sec02.md)
+
+#### [4-3 Ethernet](sec03.md)
 

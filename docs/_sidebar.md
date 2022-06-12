@@ -11,3 +11,4 @@
 - [4-The Medium Access Control Sublayer](chap04/outline.md)
   - [4-1 The Channel Allocation Problem](chap04/sec01.md)
   - [4-2 Multiple Access Protocols](chap04/sec02.md)
+  - [4-3 Ethernet](chap04/sec03.md)

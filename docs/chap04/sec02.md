@@ -141,7 +141,14 @@ CSMA/CD有三种状态：
 
 ## 4.2.3 Collision-Free Protocols
 
-CSMA/CD 虽然可以在检测到冲突时停止发送，但在Contention Peroiod期间仍会发送冲突。尤其是当 bandwidth-delay product 很大时，这种影响会很明显。下面介绍的协议即便是在Contention Peroiod期间也不会发生冲突。
+CSMA/CD 虽然可以在检测到冲突时停止发送，但在Contention Peroiod期间仍会发送冲突。尤其是当 bandwidth-delay product 很大时，这种影响会很明显。这会产生两种弊端：
+
+- 减少带宽
+- 发送帧的时间变化较大
+
+因此这种方法不适用于要求实时性强的应用，例如网络电话等。
+
+下面介绍的协议即便是在Contention Peroiod期间也不会发生冲突。
 
 ### A Bit-Map Protocol
 
@@ -167,10 +174,10 @@ CSMA/CD 虽然可以在检测到冲突时停止发送，但在Contention Peroiod
     - 高序号站点：这轮扫描完成( $N/2$ slots) 即可将数据发出
     - 因此平均下来的开销为 $N$ slots
   - 从信道的视角：效率为 $\frac{d}{d+N}$ ($d$ 为数据量，$N$ 为额外开销量)
-  - 平均延迟为：$N + d$
+  - 平均延迟为：$N + d$ （因为在低载时只有一个数据量需要发送）
 - 高载：（假设一次每个站点都需要发出数据，且数据量平均为 $d$）
   - 从信道的视角：额外开销量 $N$ 被每个站点发出的数据量均分 ，因此效率为 $\frac{d}{d+1}$ 
-  - 平均延迟为：$N+(N-1)d$
+  - 平均延迟为：$N+(N-1)d$ （因为在高载时每个数据都需要被发送）
 
 ### Token Passing
 
