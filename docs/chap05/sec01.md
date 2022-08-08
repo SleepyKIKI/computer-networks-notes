@@ -1,4 +1,4 @@
-#Network layer disign issue
+#Network layer design issue
 
 ##5.1.1 Store-and-forward packet switching
 
