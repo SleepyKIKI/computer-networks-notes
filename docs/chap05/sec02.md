@@ -54,6 +54,22 @@
           # end for d in R[]
       # end for l in interfaces
   ```
+  - `split horizon`的变种`poison reverse`：对于link `a-b`，结点A在发送自己的距离向量时，将发送距离向量的结点B的距离设置为无穷，则结点B就不会更新自己途径A结点的路由。伪代码如下：
+  ```
+  # split horizon with poison reverse
+  Every N seconds:
+      for l in interfaces:
+          # one vector for each interface
+          v = Vector()
+          for d in R[]:
+              if (R[d].link != l):
+                  v = v + Pair(d, R[d].cost)
+              else:
+                  v = v + Pair(d, infinity)
+          send(v, l)
+          # end for d in R[]
+      # end for l in interfaces
+  ```
 
 参考电子书[Computer Networking: Principles, Protocols and Practice](https://beta.computer-networking.info/syllabus/default/principles/network.html#the-control-plane)，路由表更新的时机：
 > - the cost of the new route is smaller than the cost of the already known route ((V[d].cost + l.cost) < R[d].cost)
@@ -63,6 +79,11 @@ The second condition is used to take into account the changes of routes that may
 
 也就是说当发生link failure之类的事情后，最佳路由可能发生了改变，若原来最佳路由A的cost为C_1，现在A的cost为C_2，有C_2>C_1；现在的最佳路由变为B，其cost为C_3，显然有C_2>C_3。如果C_3>C_1，则路由器中的路由表不会改变，仍然会按照路由A进行，但实际上现在路由A的cost更高。因此此时就需要即时更新路由A的cost，第二条规则就是在对原有最佳路由的cost进行更新。
 
+> routing table vs. forwarding table
+
+> routing table: a data structure that associates a destination to an outgoing interface or a nexthop router <a>and a set of additional attributes. </a>
+
+> forwarding table: It only contains the nexthops towards each destination that are used to forward packets and <a>no attributes</a>
 
 
 ## 5.2.5 Link state Routing
