@@ -4,5 +4,5 @@
 
 ### 目录
 
-#### [5-1 Network layer disign issue](sec01.md)
-#### [5-2 Routing algorithm](sec02.md)
+#### [5-1 Network layer disign issue](/chap05/sec01.md)
+#### [5-2 Routing algorithm](/chap05/sec02.md)
